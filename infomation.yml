@@ -8,6 +8,10 @@ personal:
   titles:
     - 后端开发工程师
     - 算法工程师-机器学习
+  programmingLanguage:
+    - "\ue7a8\tRust"
+    - Python
+    - TypeScript
   location:
     country: 中国
     region: 山东省
@@ -77,7 +81,7 @@ education:
     endDate: 2024-07-01
     location: 山东省 | 济宁市
     honors:
-      - 3.06 / 4.0 GPA
+      - 3.3 / 4.0 GPA
       - 团委*学生会副主席*
     courses:
       - 数据结构与算法

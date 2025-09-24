@@ -57,6 +57,18 @@
     ]
   } else { none }
 }
+
+// programming titles
+#let programmingtitletext(info) = {
+  if ("programmingLanguage" in info.personal and info.personal.programmingLanguage != none) {
+    block(width: 100%)[
+      #(
+        text(font: ("Titillium Web", "UbuntuMono Nerd Font"))[#info.personal.programmingLanguage.join("  /  ")]
+      )
+      #v(-4pt)
+    ]
+  } else { none }
+}
 // Address
 #let addresstext(info) = {
   if ("location" in info.personal and info.personal.location != none) {
@@ -103,6 +115,7 @@
   align(center)[
     = #info.personal.name
     #jobtitletext(info)
+    #programmingtitletext(info)
     #addresstext(info)
     #contacttext(info)
   ]
