@@ -20,7 +20,7 @@
   margin: 1.25cm,
 )
 
-#set text(font: ("Times New Roman", "Source Han Serif SC", "Symbols Nerd Font Mono", "UbuntuMono Nerd Font"), size: 1em)
+#set text(font: ("Titillium Web","Adobe Song Std", "Symbols Nerd Font Mono", "UbuntuMono Nerd Font"), size: 1em)
 
 #show heading.where(level: 1): it => block(width: 100%)[
   #set text(size: 1.2em, font: ("Adobe Kaiti Std R", "Symbols Nerd Font Mono"), stroke: 0.01em)
@@ -30,7 +30,7 @@
 
 #show heading.where(level: 2): it => block(width: 100%)[
   #v(0.2em)
-  #set text(size: 1.1em, font: ("Source Han Sans SC", "Symbols Nerd Font Mono"), stroke: 0em)
+  #set text(size: 1.1em, font: ("Adobe Heiti Std", "Symbols Nerd Font Mono"), stroke: 0em)
   #it.body
   #v(-0.75em) #line(length: 100%, stroke: 1pt + black) // draw a line
 ]
@@ -38,7 +38,7 @@
 #show heading.where(level: 3): it => block(width: 100%)[
   #set text(
     size: 1.2em,
-    font: ("Times New Roman", "Adobe Kaiti Std R", "Symbols Nerd Font Mono"),
+    font: ("Titillium Web", "Adobe Kaiti Std R", "Symbols Nerd Font Mono"),
     weight: "medium",
     stroke: 0.01em,
   )
@@ -87,10 +87,10 @@
 #let contacttext(info) = block(width: 100%)[
   #let profiles = (
     if "email" in info.personal and info.personal.email != none {
-      box(link("mailto:" + info.personal.email)[#box(width: 20pt)[\u{f06ee}]#info.personal.email])
+      box(link("mailto:" + info.personal.email)[#box(width: 20pt)[#text(font: "Symbols Nerd Font Mono")[\u{f06ee}]]#info.personal.email])
     },
     if ("phone" in info.personal and info.personal.phone != none) {
-      box(link("tel:" + info.personal.phone)[#box(width: 20pt)[\u{f03f2}]#info.personal.phone])
+      box(link("tel:" + info.personal.phone)[#box(width: 20pt)[#text(font: "Symbols Nerd Font Mono")[\u{f03f2}]]#info.personal.phone])
     } else { none },
     if ("url" in info.personal) and (info.personal.url != none) {
       box(link(info.personal.url)[#info.personal.url.split("//").at(1)])
@@ -99,7 +99,7 @@
 
   #if ("profiles" in info.personal) and (info.personal.profiles.len() > 0) {
     for profile in info.personal.profiles {
-      profiles.push(box(link(profile.url)[#box(width: 20pt)[#profile.icon]#profile.url.split("//").at(1)]))
+      profiles.push(box(link(profile.url)[#box(width: 20pt)[#text(font: "Symbols Nerd Font Mono")[#profile.icon]]#profile.url.split("//").at(1)]))
     }
   }
 
